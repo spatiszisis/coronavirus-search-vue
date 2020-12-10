@@ -12,9 +12,9 @@ This project is implemented with the following technologies:
 
 ## Live
 
-The project is hosted in [Heroku](https://dashboard.heroku.com/) cloud platform.
+The project is hosted in Netlify platform.
 
--   [Live](http://languageschoolsystem.herokuapp.com/login).
+-   [Live](https://coronavirusearcher.netlify.app/).
 
 ## Project setup
 ```
