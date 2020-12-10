@@ -8,7 +8,6 @@ This project is implemented with the following technologies:
 
 -   [Bootstrap](https://getbootstrap.com/).
 -   [Vue](https://vuejs.org/).
--   [MySQL](https://www.mysql.com/).
 
 ## Live
 
