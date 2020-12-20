@@ -1,15 +1,21 @@
 <template>
-  <div>
-    <show-results></show-results>
+  <div class="container-fluid">
+    <Header />
+    <GlobalResults />
+    <SelectBoxCountry />
   </div>
 </template>
 
 <script>
-import showResults from "./components/showResult.vue";
+import Header from "./components/Header.vue";
+import GlobalResults from "./components/GlobalResults.vue";
+import SelectBoxCountry from "./components/SelectBoxCountry.vue";
 
 export default {
   components: {
-    "show-results": showResults,
+    Header,
+    GlobalResults,
+    SelectBoxCountry,
   },
 };
 </script>
