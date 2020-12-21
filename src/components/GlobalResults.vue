@@ -11,7 +11,7 @@
                 Total Confirmed
               </div>
               <div class="h5 mb-0 font-weight-bold text-gray-800">
-                {{ totalConfirmed }}
+                {{ Number(totalConfirmed).toLocaleString() }} Millions
               </div>
             </div>
           </div>
@@ -30,7 +30,7 @@
                 Total Recovered
               </div>
               <div class="h5 mb-0 font-weight-bold text-gray-800">
-                {{ totalRecovered }}
+                {{ Number(totalRecovered).toLocaleString() }} Millions
               </div>
             </div>
           </div>
@@ -49,7 +49,7 @@
                 Total Deaths
               </div>
               <div class="h5 mb-0 font-weight-bold text-gray-800">
-                {{ totalDeaths }}
+                {{ Number(totalDeaths).toLocaleString() }} Millions
               </div>
             </div>
           </div>

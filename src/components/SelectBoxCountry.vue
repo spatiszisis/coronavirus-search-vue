@@ -1,6 +1,6 @@
 <template>
-  <div class="row mt-5">
-    <div class="col-xl-6 col-md-6 mb-4">
+  <div>
+    <div class="row mt-5 d-flex justify-content-center">
       <div class="card shadow">
         <div class="card-header">Search your Country</div>
         <div class="card-body">
@@ -27,28 +27,53 @@
         </div>
       </div>
     </div>
-    <div class="col-xl-6 col-md-6 mb-4">
+    <div class="row mt-4 d-flex justify-content-center">
       <div
-        v-for="cor in corona.slice(corona.length - 1)"
+        v-for="cor in corona.slice(corona.length - 4).reverse()"
         :key="cor.Slug"
-        class="single-result"
+        class="single-result my-2 col-xl-6 col-md-6"
       >
         <div class="card shadow">
-          <div class="card-header text-gray-800">
-            Country: {{ cor.Country }}
+          <div class="card-header">
+            <div class="d-flex justify-content-between">
+              <div>
+                <span
+                  >Country:
+                  <span class="font-weight-bold"> {{ cor.Country }}</span></span
+                >
+              </div>
+              <div>
+                <span>{{ getDate(cor.Date) }}</span>
+              </div>
+            </div>
           </div>
+
           <div class="card-body">
-            <div class="results">
-              <p>
-                <span class="text-success">Confirmed:</span>
-                {{ cor.Confirmed }}
-              </p>
-              <p><span class="text-danger">Deaths:</span> {{ cor.Deaths }}</p>
-              <p><span class="text-warning">Active:</span> {{ cor.Active }}</p>
-              <p>
-                <span class="font-weight-normal">Date:</span>
-                {{ cor.Date.slice(0, 10) }}
-              </p>
+            <div class="row">
+              <div class="col text-center">
+                <div>
+                  <strong class="text-success">Confirmed</strong>
+                </div>
+                <div>
+                  <span>{{ cor.Confirmed }}</span>
+                </div>
+              </div>
+              <div class="col text-center">
+                <div>
+                  <strong class="text-danger">Deaths</strong>
+                </div>
+                <div>
+                  <span>{{ cor.Deaths }}</span>
+                </div>
+              </div>
+              <div class="col text-center">
+                <div>
+                  <strong class="text-warning">Active</strong>
+                </div>
+                <div>
+                  <span>{{ cor.Active }}</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -58,6 +83,8 @@
 </template>
 
 <script>
+import moment from "moment";
+
 export default {
   data() {
     return {
@@ -76,6 +103,9 @@ export default {
       ).finally(() => (this.loading = false));
       const json = await response.json();
       this.corona = json;
+    },
+    getDate(date) {
+      return moment(date).format("ll");
     },
   },
   async mounted() {
