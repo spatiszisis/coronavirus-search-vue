@@ -14,41 +14,41 @@
               </select>
             </div>
             <div class="form-group text-center">
-              <button type="submit" class="btn btn-success">Submit</button>
+              <button type="submit" class="btn btn-success">
+                <div
+                  class="spinner-border spinner-border-sm"
+                  v-if="loading"
+                ></div>
+                <span v-if="loading" class="px-1">Loading</span>
+                <span v-else>Submit</span>
+              </button>
             </div>
           </form>
         </div>
       </div>
     </div>
     <div class="col-xl-6 col-md-6 mb-4">
-      <div v-if="loading">
-        <Spinner />
-      </div>
-      <div v-else>
-        <div
-          v-for="cor in corona.slice(corona.length - 1)"
-          :key="cor.Slug"
-          class="single-result"
-        >
-          <div class="card shadow">
-            <div class="card-header text-gray-800">
-              Country: {{ cor.Country }}
-            </div>
-            <div class="card-body">
-              <div class="results">
-                <p>
-                  <span class="text-success">Confirmed:</span>
-                  {{ cor.Confirmed }}
-                </p>
-                <p><span class="text-danger">Deaths:</span> {{ cor.Deaths }}</p>
-                <p>
-                  <span class="text-warning">Active:</span> {{ cor.Active }}
-                </p>
-                <p>
-                  <span class="font-weight-normal">Date:</span>
-                  {{ cor.Date.slice(0, 10) }}
-                </p>
-              </div>
+      <div
+        v-for="cor in corona.slice(corona.length - 1)"
+        :key="cor.Slug"
+        class="single-result"
+      >
+        <div class="card shadow">
+          <div class="card-header text-gray-800">
+            Country: {{ cor.Country }}
+          </div>
+          <div class="card-body">
+            <div class="results">
+              <p>
+                <span class="text-success">Confirmed:</span>
+                {{ cor.Confirmed }}
+              </p>
+              <p><span class="text-danger">Deaths:</span> {{ cor.Deaths }}</p>
+              <p><span class="text-warning">Active:</span> {{ cor.Active }}</p>
+              <p>
+                <span class="font-weight-normal">Date:</span>
+                {{ cor.Date.slice(0, 10) }}
+              </p>
             </div>
           </div>
         </div>
@@ -58,8 +58,6 @@
 </template>
 
 <script>
-import Spinner from "vue-simple-spinner";
-
 export default {
   data() {
     return {
@@ -68,9 +66,6 @@ export default {
       countries: [],
       loading: false,
     };
-  },
-  components: {
-    Spinner,
   },
   methods: {
     async submitted() {
