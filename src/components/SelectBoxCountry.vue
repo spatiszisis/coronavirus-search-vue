@@ -21,7 +21,10 @@
       </div>
     </div>
     <div class="col-xl-6 col-md-6 mb-4">
-      <div v-if="corona">
+      <div v-if="loading">
+        <Spinner />
+      </div>
+      <div v-else>
         <div
           v-for="cor in corona.slice(corona.length - 1)"
           :key="cor.Slug"
@@ -55,19 +58,27 @@
 </template>
 
 <script>
+import Spinner from "vue-simple-spinner";
+
 export default {
   data() {
     return {
       val: "",
       corona: [],
       countries: [],
+      loading: false,
     };
+  },
+  components: {
+    Spinner,
   },
   methods: {
     async submitted() {
+      this.loading = true;
+
       const response = await fetch(
         `https://api.covid19api.com/country/${this.val}`
-      );
+      ).finally(() => (this.loading = false));
       const json = await response.json();
       this.corona = json;
     },
