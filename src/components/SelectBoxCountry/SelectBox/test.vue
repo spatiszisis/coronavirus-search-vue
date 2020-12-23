@@ -81,38 +81,3 @@
     </div>
   </div>
 </template>
-
-<script>
-import moment from "moment";
-
-export default {
-  data() {
-    return {
-      val: "",
-      corona: [],
-      countries: [],
-      loading: false,
-    };
-  },
-  methods: {
-    async submitted() {
-      this.loading = true;
-
-      const response = await fetch(
-        `https://api.covid19api.com/country/${this.val}`
-      ).finally(() => (this.loading = false));
-      const json = await response.json();
-      this.corona = json;
-    },
-    getDate(date) {
-      return moment(date).format("ll");
-    },
-  },
-  async mounted() {
-    const response = await fetch(`https://api.covid19api.com/summary`);
-    const json = await response.json();
-
-    this.countries = json.Countries;
-  },
-};
-</script>

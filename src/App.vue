@@ -1,23 +1,21 @@
 <template>
-  <div class="container-fluid">
-    <Header />
-    <h4 class="mt-4">Global Results</h4>
-    <hr />
-    <GlobalResults />
-    <h4 class="mt-5">Search your Country</h4>
-    <hr />
-    <SelectBoxCountry />
+  <div>
+    <Navbar />
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <GlobalResults />
+      <SelectBoxCountry />
+    </div>
   </div>
 </template>
 
 <script>
-import Header from "./components/Header.vue";
-import GlobalResults from "./components/GlobalResults.vue";
-import SelectBoxCountry from "./components/SelectBoxCountry.vue";
+import GlobalResults from "./components/GlobalResults/GlobalResults.vue";
+import SelectBoxCountry from "./components/SelectBoxCountry/SelectBoxCountry.vue";
+import Navbar from "./components/Navbar.vue";
 
 export default {
   components: {
-    Header,
+    Navbar,
     GlobalResults,
     SelectBoxCountry,
   },
@@ -25,7 +23,4 @@ export default {
 </script>
 
 <style>
-body {
-  background-color: #eee;
-}
 </style>
