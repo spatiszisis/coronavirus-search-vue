@@ -47,8 +47,6 @@
           </span>
         </button>
       </span>
-
-      <!-- Select popover, show/hide based on select state. -->
       <div
         v-show="isOpen"
         class="absolute mt-1 w-full rounded-md bg-white shadow-lg"
@@ -60,11 +58,6 @@
           aria-activedescendant="listbox-item-3"
           class="max-h-56 rounded-md py-1 text-base leading-6 shadow-xs overflow-auto focus:outline-none sm:text-sm sm:leading-5"
         >
-          <!--
-            Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation.
-
-            Highlighted: "text-white bg-indigo-600", Not Highlighted: "text-gray-900"
-          -->
           <li
             tabindex="0"
             @click="select(d)"
@@ -95,12 +88,6 @@
                 {{ d.Country }}
               </span>
             </div>
-
-            <!--
-              Checkmark, only display for selected option.
-
-              Highlighted: "text-white", Not Highlighted: "text-indigo-600"
-            -->
             <span
               v-show="isSelected(d)"
               class="absolute inset-y-0 right-0 flex items-center pr-4"
