@@ -6,7 +6,8 @@ This is a Coronavirus Searcher implemented with Vue.
 
 This project is implemented with the following technologies:
 
-- [Bootstrap](https://getbootstrap.com/).
+- [Tailwind](https://tailwindcss.com/).
+- [Vuetify](https://vuetifyjs.com/en/).
 - [Vue](https://vuejs.org/).
 - [API](https://covid19api.com/).
 
