@@ -8,7 +8,7 @@
           <div class="flex-shrink-0 flex items-center">
             <img
               class="h-12 w-auto"
-              src="../assets/coronavirus.png"
+              :src="require('@/assets/coronavirus.png')"
               alt="Workflow"
             />
             <p class="text-white ml-2 font-bold">CoronovirusStatistics</p>
