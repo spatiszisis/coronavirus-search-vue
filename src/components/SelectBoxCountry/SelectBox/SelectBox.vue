@@ -49,7 +49,7 @@
       </span>
       <div
         v-show="isOpen"
-        class="absolute mt-1 w-full rounded-md bg-white shadow-lg"
+        class="z-50 absolute mt-1 w-full rounded-md bg-white shadow-lg"
       >
         <ul
           tabindex="-1"
@@ -65,7 +65,7 @@
             role="option"
             v-for="d in data"
             v-bind:key="d.id"
-            class="text-gray-900 cursor-default select-none relative py-2 pl-3 pr-9 cursor-pointer hover:text-white hover:bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-600"
+            class="text-gray-900 select-none relative py-2 pl-3 pr-9 cursor-pointer hover:text-white hover:bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-600"
           >
             <div class="flex items-center space-x-3">
               <img

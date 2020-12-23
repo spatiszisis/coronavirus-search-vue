@@ -1,16 +1,18 @@
 <template>
-  <div class="flex flex-wrap -mx-1 my-3 md:-mx-2 md:my-3 lg:-mx-5">
+  <div class="grid grid-cols-12 mt-5">
     <CardGlobalResults
       leadHeading="Total Confirmed"
       :globalResultValue="globalResults.TotalConfirmed"
       :globalResultValueNew="globalResults.NewConfirmed"
       image="coronavirus_blue.png"
+      class="mr-2"
     />
     <CardGlobalResults
       leadHeading="Total Recovered"
       :globalResultValue="globalResults.TotalRecovered"
       :globalResultValueNew="globalResults.NewRecovered"
       image="coronavirus_green.png"
+      class="mr-2"
     />
     <CardGlobalResults
       leadHeading="Total Deaths"

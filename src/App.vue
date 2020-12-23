@@ -1,12 +1,12 @@
 <template>
   <div>
     <Navbar />
-    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+    <div class="mx-auto px-2 sm:px-6 lg:px-8">
       <GlobalResults />
       <SelectBoxCountry />
-      <div class="grid grid-cols-12 gap-4 my-5">
-        <CaseCountryList class="col-span-4" />
-        <TableResults class="col-span-8" />
+      <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-12 my-6">
+        <CaseCountryList class="mt-5 mb-8 md:col-span-4 md:mr-3" />
+        <TableResults class="md:col-span-8 md:my-6" />
       </div>
     </div>
   </div>
